@@ -1,0 +1,18 @@
+[package]
+name = "jito-protos"
+version = "0.1.0"
+edition = "2021"  # Changed from "2024" (which doesn't exist) to "2021"
+description = "Protobufs for working with block engine"
+authors = ["Jito Foundation"]  # Changed from workspace = true
+homepage = "https://github.com/jito-foundation/jito-protos"  # Changed from workspace = true
+publish = false
+
+[dependencies]
+prost = "0.13.1"
+prost-types = "0.13.3" # Changed from workspace = true
+tonic = "0.12.1"# Changed from workspace = true
+
+[build-dependencies]
+protobuf-src = "1"
+tonic-build = "0.12.1"
+prost-build = "0.12.1"
