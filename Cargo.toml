@@ -13,7 +13,7 @@ prost-types = "0.13.3" # Changed from workspace = true
 tonic = "0.12.1"# Changed from workspace = true
 bincode = "1.3.3"
 solana-sdk = "2.2.2"
-solana-perf = "=2.2.2"
+solana-perf = "=2.2.20"
 
 [build-dependencies]
 protobuf-src = "1"
