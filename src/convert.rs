@@ -116,20 +116,20 @@ pub fn packet_from_versioned_tx(tx: VersionedTransaction) -> Packet {
 }
 
 // /// Converts a VersionedTransaction to a protobuf packet
-// pub fn proto_packet_from_versioned_tx(tx: &VersionedTransaction) -> ProtoPacket {
-//     let data = serialize(tx).expect("serializes");
-//     let size = data.len() as u64;
-//     ProtoPacket {
-//         data,
-//         meta: Some(ProtoMeta {
-//             size,
-//             addr: "".to_string(),
-//             port: 0,
-//             flags: None,
-//             sender_stake: 0,
-//         }),
-//     }
-// }
+pub fn proto_packet_from_versioned_tx(tx: &VersionedTransaction) -> ProtoPacket {
+    let data = serialize(tx).expect("serializes");
+    let size = data.len() as u64;
+    ProtoPacket {
+        data,
+        meta: Some(ProtoMeta {
+            size,
+            addr: "".to_string(),
+            port: 0,
+            flags: None,
+            sender_stake: 0,
+        }),
+    }
+}
 
 // /// Converts a GRPC Socket to stdlib SocketAddr
 // impl TryFrom<&Socket> for SocketAddr {
