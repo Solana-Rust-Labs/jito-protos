@@ -8,3 +8,28 @@ pub mod shared {
 pub mod shredstream {
     tonic::include_proto!("shredstream");
 }
+
+pub mod block {
+    tonic::include_proto!("block");
+}
+
+pub mod searcher {
+
+    tonic::include_proto!("searcher");
+}
+pub mod block_engine {
+    tonic::include_proto!("block_engine");
+}
+
+pub mod packet {
+    tonic::include_proto!("packet");
+}
+
+pub mod relayer {
+    tonic::include_proto!("relayer");
+}
+
+pub mod bundle {
+    tonic::include_proto!("bundle");
+}
+
