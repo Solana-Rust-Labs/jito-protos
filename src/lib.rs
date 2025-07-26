@@ -33,3 +33,4 @@ pub mod bundle {
     tonic::include_proto!("bundle");
 }
 
+pub mod convert;
