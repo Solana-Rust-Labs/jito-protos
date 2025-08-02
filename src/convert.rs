@@ -5,7 +5,7 @@ use std::{
 };
 
 use bincode::serialize;
-use solana_perf::packet::{PACKET_DATA_SIZE, Packet, PacketBatch};
+// use solana_perf::packet::{PACKET_DATA_SIZE, Packet, PacketBatch};
 use solana_sdk::{
     packet::{Meta, PacketFlags},
     transaction::VersionedTransaction,
@@ -103,17 +103,6 @@ use crate::{
 //     }
 //     packet.deserialize_slice(..).ok()
 // }
-
-// /// Coverts a VersionedTransaction to packet
-pub fn packet_from_versioned_tx(tx: VersionedTransaction) -> Packet {
-    let tx_data = serialize(&tx).expect("serializes");
-    let mut data = [0; PACKET_DATA_SIZE];
-    let copy_len = min(tx_data.len(), data.len());
-    data[..copy_len].copy_from_slice(&tx_data[..copy_len]);
-    let mut packet = Packet::new(data, Default::default());
-    packet.meta_mut().size = copy_len;
-    packet
-}
 
 // /// Converts a VersionedTransaction to a protobuf packet
 pub fn proto_packet_from_versioned_tx(tx: &VersionedTransaction) -> ProtoPacket {
